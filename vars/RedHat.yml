@@ -1,0 +1,3 @@
+---
+pti_disable_ipv6_sysctl_command: /usr/sbin/sysctl -p
+

@@ -1,0 +1,27 @@
+---
+
+- name: add /etc/sysctl.d directory
+  become: True
+  file:
+    owner: root
+    group: root
+    mode: 0755
+    path: /etc/sysctl.d
+    state: directory
+
+- name: configure /etc/sysctl.d/99-ipv6_disable.conf
+  become: True
+  lineinfile:
+    path: /etc/sysctl.d/99-ipv6_disable.conf
+    state: present
+    owner: root
+    group: root
+    mode: 0644
+    create: yes
+    line: "{{ item.line }} = {{ item.value }} # Ansible managed"
+    regexp: "^{{ item.line }}"
+  with_items:
+  - { line: net.ipv6.conf.all.disable_ipv6, value: 1 }
+  - { line: net.ipv6.conf.default.disable_ipv6, value: 1 }
+  - { line: net.ipv6.conf.lo.disable_ipv6, value: 1 }
+  notify: sysctl | reload
