@@ -1,7 +1,7 @@
 Ansible Role: ansible_role_disable_ipv6
 =========
 
-An Ansible role that through sysctl disabled IPv6 repositories on supported distributions.
+Disables IPv6 on the following distributions:
 
 <ul>
 <li>Debian
