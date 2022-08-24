@@ -22,7 +22,7 @@ This role has no user configurable variables.
 Dependencies
 ------------
 
-This role has no external dependencies.
+None.
 
 Example Playbook
 ----------------
