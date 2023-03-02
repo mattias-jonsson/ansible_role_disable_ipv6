@@ -7,11 +7,11 @@ galaxy_info:
   role_name: ansible_role_epel
   license: MIT
   platforms:
-  - name: EL
-    versions:
-    - "7"
-    - "8"
-  - name: Debian
-    versions:
-    - buster
-    - bullseye
+    - name: EL
+      versions:
+        - "7"
+        - "8"
+    - name: Debian
+      versions:
+        - buster
+        - bullseye
